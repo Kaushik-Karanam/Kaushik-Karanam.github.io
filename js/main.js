@@ -1,6 +1,6 @@
 /**
  * Portfolio Website JavaScript
- * Author: Kaushik Karanam (Enhanced)
+ * Author: Kaushik Karanam (Enhanced and Cleaned)
  */
 
 // ====== DOM Elements ======
@@ -14,227 +14,303 @@ const skillBars = document.querySelectorAll('.skill-progress');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 const contactForm = document.getElementById('contactForm');
-const themeToggle = document.getElementById('themeIcon');
+const formStatus = document.getElementById('formStatus');
+const themeToggleMoon = document.getElementById('themeIconMoon');
+const themeToggleSun = document.getElementById('themeIconSun');
+const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
 
 // ====== On DOM Loaded ======
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-  
-  initCursor();
-  initNavigation();
-  initTypewriter();
-  initSkillBars();
-  initProjectFilters();
-  initContactForm();
-  initScrollReveal();
-  initThemeToggle();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    initCursor();
+    initNavigation();
+    initTypewriter();
+    initSkillBars();
+    initProjectFilters();
+    initContactForm();
+    initThemeToggle();
 });
 
 // ====== Custom Cursor ======
 function initCursor() {
-  if (!cursor || !cursorFollower) return;
+    if (!cursor || !cursorFollower) return;
 
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
+    const isHoverDevice = window.matchMedia('(hover: hover)').matches;
+    if (!isHoverDevice) {
+        cursor.style.display = 'none';
+        cursorFollower.style.display = 'none';
+        return;
+    }
 
-    setTimeout(() => {
-      cursorFollower.style.left = `${e.clientX}px`;
-      cursorFollower.style.top = `${e.clientY}px`;
-    }, 50);
-  });
+    document.body.style.cursor = 'none';
+    
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
 
-  const hoverTargets = document.querySelectorAll('a, button, .btn, .project-card, .timeline-content, .stat-box, .skill-category');
-
-  hoverTargets.forEach(target => {
-    target.addEventListener('mouseenter', () => {
-      cursor.style.width = '0';
-      cursor.style.height = '0';
-      cursorFollower.style.transform = 'translate(-50%, -50%) scale(2)';
-      cursorFollower.style.opacity = '0.7';
+        setTimeout(() => {
+            cursorFollower.style.left = `${e.clientX}px`;
+            cursorFollower.style.top = `${e.clientY}px`;
+        }, 50);
     });
-    target.addEventListener('mouseleave', () => {
-      cursor.style.width = '10px';
-      cursor.style.height = '10px';
-      cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-      cursorFollower.style.opacity = '0.5';
+
+    const hoverTargets = document.querySelectorAll('a, button, .btn, .project-card, .timeline-content, .stat-box, .skill-category, .filter-btn, .theme-toggle');
+
+    hoverTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+            cursor.style.width = '0';
+            cursor.style.height = '0';
+            cursorFollower.style.transform = 'translate(-50%, -50%) scale(2)';
+            cursorFollower.style.opacity = '0.7';
+        });
+        target.addEventListener('mouseleave', () => {
+            cursor.style.width = '10px';
+            cursor.style.height = '10px';
+            cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursorFollower.style.opacity = '0.5';
+        });
     });
-  });
 }
 
 // ====== Navigation ======
 function initNavigation() {
-  if (!header) return;
+    if (!header) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
 
-    // Active Nav Highlight
-    let currentSection = '';
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute('id');
-      }
+        let currentSection = '';
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === '#' + currentSection) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // Mobile menu toggle
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
     });
 
     navItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('href') === '#' + currentSection) {
-        item.classList.add('active');
-      }
+        item.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        });
     });
-  });
 
-  // Hamburger toggle
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !e.target.closest('.nav-links') && 
+            !e.target.closest('.hamburger')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
     });
-  });
+
+    navItems.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 }
 
-// ====== Typewriter ======
+// ====== Typewriter Effect ======
 function initTypewriter() {
-  const txtRotate = document.querySelector('.txt-rotate');
-  if (!txtRotate) return;
+    const txtRotate = document.querySelector('.txt-rotate');
+    if (!txtRotate) return;
 
-  const period = parseInt(txtRotate.getAttribute('data-period')) || 2000;
-  const toRotate = JSON.parse(txtRotate.getAttribute('data-rotate'));
-  let loopNum = 0;
-  let txt = '';
-  let isDeleting = false;
+    const period = parseInt(txtRotate.getAttribute('data-period')) || 2000;
+    const toRotate = JSON.parse(txtRotate.getAttribute('data-rotate'));
+    let loopNum = 0;
+    let txt = '';
+    let isDeleting = false;
 
-  function tick() {
-    const i = loopNum % toRotate.length;
-    const fullTxt = toRotate[i];
+    function tick() {
+        const i = loopNum % toRotate.length;
+        const fullTxt = toRotate[i];
 
-    if (isDeleting) {
-      txt = fullTxt.substring(0, txt.length - 1);
-    } else {
-      txt = fullTxt.substring(0, txt.length + 1);
+        if (isDeleting) {
+            txt = fullTxt.substring(0, txt.length - 1);
+        } else {
+            txt = fullTxt.substring(0, txt.length + 1);
+        }
+
+        txtRotate.textContent = txt;
+
+        let delta = 200 - Math.random() * 100;
+        if (isDeleting) delta /= 2;
+
+        if (!isDeleting && txt === fullTxt) {
+            delta = period;
+            isDeleting = true;
+        } else if (isDeleting && txt === '') {
+            isDeleting = false;
+            loopNum++;
+            delta = 500;
+        }
+
+        setTimeout(tick, delta);
     }
 
-    txtRotate.textContent = txt;
-
-    let delta = 200 - Math.random() * 100;
-    if (isDeleting) delta /= 2;
-
-    if (!isDeleting && txt === fullTxt) {
-      delta = period;
-      isDeleting = true;
-    } else if (isDeleting && txt === '') {
-      isDeleting = false;
-      loopNum++;
-      delta = 500;
-    }
-
-    setTimeout(tick, delta);
-  }
-
-  tick();
+    tick();
 }
 
 // ====== Skill Bars Animation ======
 function initSkillBars() {
-  if (skillBars.length === 0) return;
+    if (skillBars.length === 0) return;
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        const width = bar.getAttribute('style').match(/\d+/)[0];
-        bar.style.width = width + '%';
-      }
+    skillBars.forEach(bar => {
+        bar.style.width = '0';
     });
-  }, {
-    threshold: 0.5
-  });
 
-  skillBars.forEach(bar => observer.observe(bar));
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const width = entry.target.getAttribute('data-width');
+                setTimeout(() => {
+                    entry.target.style.width = width + '%';
+                }, 200);
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    skillBars.forEach(bar => observer.observe(bar));
 }
 
 // ====== Project Filters ======
 function initProjectFilters() {
-  if (filterBtns.length === 0 || projectCards.length === 0) return;
+    if (filterBtns.length === 0 || projectCards.length === 0) return;
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
 
-      const filter = this.getAttribute('data-filter');
+            const filter = this.getAttribute('data-filter');
 
-      projectCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+            projectCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }, 300);
+            });
+        });
     });
-  });
 }
 
 // ====== Contact Form Validation ======
 function initContactForm() {
-  if (!contactForm) return;
+    if (!contactForm) return;
 
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+    formInputs.forEach(input => {
+        input.addEventListener('blur', () => validateInput(input));
+        input.addEventListener('input', () => {
+            if (input.parentElement.classList.contains('error')) validateInput(input);
+        });
+    });
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
 
-    if (!name || !email || !subject || !message) {
-      alert('Please fill all fields.');
-      return;
+        formInputs.forEach(input => {
+            if (!validateInput(input)) isValid = false;
+        });
+
+        if (isValid) {
+            formStatus.textContent = 'Thank you for your message! I will get back to you soon.';
+            formStatus.className = 'form-status success';
+
+            setTimeout(() => {
+                contactForm.reset();
+                formStatus.className = 'form-status';
+            }, 3000);
+        } else {
+            formStatus.textContent = 'Please fill all required fields correctly.';
+            formStatus.className = 'form-status error';
+        }
+    });
+
+    function validateInput(input) {
+        const formGroup = input.parentElement;
+        const value = input.value.trim();
+        let isValid = true;
+
+        formGroup.classList.remove('error');
+
+        if (value === '') {
+            formGroup.classList.add('error');
+            isValid = false;
+        } else if (input.type === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                formGroup.classList.add('error');
+                isValid = false;
+            }
+        }
+
+        return isValid;
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-  });
 }
 
-// ====== Scroll Reveal Animations ======
-function initScrollReveal() {
-  ScrollReveal().reveal('.section-header, .about-content, .skills-content, .projects-grid, .experience-timeline, .contact-wrapper', {
-    duration: 1200,
-    distance: '60px',
-    easing: 'ease-out',
-    origin: 'bottom',
-    interval: 150,
-    reset: false
-  });
-}
-
-// ====== Dark Mode Toggle ======
+// ====== Theme Toggle ======
 function initThemeToggle() {
-  if (!themeToggle) return;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const savedTheme = localStorage.getItem('theme');
 
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    themeToggle.classList.toggle('fa-moon');
-    themeToggle.classList.toggle('fa-sun');
-  });
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark.matches)) {
+        document.body.classList.add('dark');
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    if (themeToggleMoon) themeToggleMoon.addEventListener('click', toggleTheme);
+    if (themeToggleSun) themeToggleSun.addEventListener('click', toggleTheme);
 }

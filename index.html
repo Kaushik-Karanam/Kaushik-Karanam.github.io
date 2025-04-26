@@ -10,17 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- ScrollReveal Animation Library -->
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
-
   <!-- Header -->
   <header>
     <div class="container">
@@ -28,16 +21,19 @@
         <a href="#">KK</a>
       </div>
       <nav>
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+          <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
         <div class="theme-toggle">
-          <i class="fas fa-moon" id="themeIcon"></i>
+          <i class="fas fa-moon" id="themeIconMoon"></i>
+          <i class="fas fa-sun" id="themeIconSun"></i>
         </div>
         <div class="hamburger">
           <span></span>
@@ -64,14 +60,14 @@
             <a href="#contact" class="btn btn-secondary">Contact Me</a>
           </div>
           <div class="social-icons">
-            <a href="https://linkedin.com/in/kaushikkaranam" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/kaushik-karanam" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:karanam.ka@northeastern.edu"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/kaushikkaranam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/kaushik-karanam" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:karanam.ka@northeastern.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
 
         <div class="hero-image">
-          <img src="/api/placeholder/500/500" alt="Kaushik Karanam">
+          <img src="https://placehold.co/500x500" alt="Kaushik Karanam">
           <div class="hero-image-bg"></div>
         </div>
       </div>
@@ -148,24 +144,39 @@
             <h3>Languages & Tools</h3>
             <div class="skill-items">
               <div class="skill-item">
-                <span class="skill-name">Java</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                <div class="skill-name">
+                  <span>Java</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Python</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                <div class="skill-name">
+                  <span>Python</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">SQL</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                <div class="skill-name">
+                  <span>SQL</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Shell Scripting</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                <div class="skill-name">
+                  <span>Shell Scripting</span>
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">C++</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                <div class="skill-name">
+                  <span>C++</span>
+                  <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
               </div>
             </div>
           </div>
@@ -175,24 +186,39 @@
             <h3>Backend & Cloud</h3>
             <div class="skill-items">
               <div class="skill-item">
-                <span class="skill-name">Spring Boot</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                <div class="skill-name">
+                  <span>Spring Boot</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Docker</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                <div class="skill-name">
+                  <span>Docker</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">AWS</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                <div class="skill-name">
+                  <span>AWS</span>
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Kubernetes</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                <div class="skill-name">
+                  <span>Kubernetes</span>
+                  <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Jenkins/CI/CD</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                <div class="skill-name">
+                  <span>Jenkins/CI/CD</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
               </div>
             </div>
           </div>
@@ -202,24 +228,39 @@
             <h3>Data & ML Engineering</h3>
             <div class="skill-items">
               <div class="skill-item">
-                <span class="skill-name">Airflow</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                <div class="skill-name">
+                  <span>Airflow</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">TensorFlow</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                <div class="skill-name">
+                  <span>TensorFlow</span>
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Spark</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                <div class="skill-name">
+                  <span>Spark</span>
+                  <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">Scikit-learn</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                <div class="skill-name">
+                  <span>Scikit-learn</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
               </div>
               <div class="skill-item">
-                <span class="skill-name">SQL Tuning</span>
-                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                <div class="skill-name">
+                  <span>SQL Tuning</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
               </div>
             </div>
           </div>
@@ -227,8 +268,6 @@
         </div>
       </div>
     </section>
-
-<!-- (continues with Projects, Experience, Contact, Footer exactly in same structure — clean, with scroll animation) -->
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
@@ -250,7 +289,7 @@
           <!-- Project 1 -->
           <div class="project-card" data-category="data">
             <div class="project-img">
-              <img src="/api/placeholder/600/400" alt="Business Intelligence Platform">
+              <img src="https://placehold.co/600x400" alt="Business Intelligence Platform">
             </div>
             <div class="project-info">
               <h3>Business Intelligence Platform</h3>
@@ -265,7 +304,7 @@
           <!-- Project 2 -->
           <div class="project-card" data-category="backend">
             <div class="project-img">
-              <img src="/api/placeholder/600/400" alt="Order Management Automation">
+              <img src="https://placehold.co/600x400" alt="Order Management Automation">
             </div>
             <div class="project-info">
               <h3>Order Management Automation</h3>
@@ -280,7 +319,7 @@
           <!-- Project 3 -->
           <div class="project-card" data-category="ml">
             <div class="project-img">
-              <img src="/api/placeholder/600/400" alt="Neural Network Pipeline">
+              <img src="https://placehold.co/600x400" alt="Neural Network Pipeline">
             </div>
             <div class="project-info">
               <h3>Neural Network Pipeline</h3>
@@ -295,7 +334,7 @@
           <!-- Project 4 -->
           <div class="project-card" data-category="ml">
             <div class="project-img">
-              <img src="/api/placeholder/600/400" alt="Ocean pH Forecasting">
+              <img src="https://placehold.co/600x400" alt="Ocean pH Forecasting">
             </div>
             <div class="project-info">
               <h3>Ocean pH Forecasting</h3>
@@ -324,7 +363,7 @@
           <!-- Job 1 -->
           <div class="timeline-item">
             <div class="timeline-img">
-              <img src="/api/placeholder/80/80" alt="TCS Logo">
+              <img src="https://placehold.co/80x80" alt="TCS Logo">
             </div>
             <div class="timeline-content">
               <span class="date">Oct 2021 - Jun 2023</span>
@@ -343,7 +382,7 @@
           <!-- Job 2 -->
           <div class="timeline-item">
             <div class="timeline-img">
-              <img src="/api/placeholder/80/80" alt="BHEL Logo">
+              <img src="https://placehold.co/80x80" alt="BHEL Logo">
             </div>
             <div class="timeline-content">
               <span class="date">May 2018 - Jul 2018</span>
@@ -394,25 +433,30 @@
             </div>
 
             <div class="social-links">
-              <a href="https://linkedin.com/in/kaushikkaranam" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://github.com/kaushik-karanam" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="mailto:karanam.ka@northeastern.edu"><i class="fas fa-envelope"></i></a>
+              <a href="https://linkedin.com/in/kaushikkaranam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/kaushik-karanam" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="mailto:karanam.ka@northeastern.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
 
           <div class="contact-form">
+            <div class="form-status" id="formStatus"></div>
             <form id="contactForm">
               <div class="form-group">
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <span class="error-message">Please enter your name</span>
               </div>
               <div class="form-group">
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <span class="error-message">Please enter a valid email address</span>
               </div>
               <div class="form-group">
                 <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                <span class="error-message">Please enter a subject</span>
               </div>
               <div class="form-group">
                 <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                <span class="error-message">Please enter your message</span>
               </div>
               <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
@@ -431,9 +475,9 @@
           <a href="#">KK</a>
         </div>
         <div class="footer-social">
-          <a href="https://linkedin.com/in/kaushikkaranam" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/kaushik-karanam" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="mailto:karanam.ka@northeastern.edu"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/in/kaushikkaranam" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/kaushik-karanam" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:karanam.ka@northeastern.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
         <div class="footer-copyright">
           <p>&copy; <span id="currentYear">2025</span> Kaushik Karanam. All Rights Reserved.</p>
@@ -443,7 +487,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="main.js"></script>
 
 </body>
 </html>
