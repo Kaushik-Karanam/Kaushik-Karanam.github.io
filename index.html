@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaushik Karanam | Software Engineer & ML</title>
+  <meta name="description" content="Portfolio of Kaushik Karanam — backend systems, cloud, and ML pipelines." />
+  <link rel="preload" as="image" href="Images/Main.jpg" fetchpriority="high">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="Go to home">
+        <span class="logo">KK</span>
+        <span class="brand-name">Kaushik Karanam</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul id="navMenu" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a class="btn btn--ghost" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="section hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 class="hero-title">Build. <span class="accent">Observe</span>. Learn.</h1>
+        <p class="hero-sub">
+          I’m Kaushik — Software Engineer focused on high-impact APIs, cloud infra, and production ML pipelines.
+        </p>
+
+        <div class="role-carousel" aria-live="polite">
+          <span class="role-item active">Software Engineer</span>
+          <span class="role-item">Backend Systems</span>
+          <span class="role-item">Cloud & DevOps</span>
+          <span class="role-item">ML Engineering</span>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn" href="#projects">Explore my work</a>
+          <a class="btn btn--ghost" href="Kaushik_Karanam_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://linkedin.com/in/kaushikkaranam" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/kaushik-karanam" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:karanam.ka@northeastern.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- Hero media (circular avatar + rings) -->
+      <div class="hero-art">
+        <span class="ring ring--lg" aria-hidden="true"></span>
+        <span class="ring ring--md" aria-hidden="true"></span>
+        <span class="ring ring--sm" aria-hidden="true"></span>
+
+        <img
+          src="Images/Main.jpg"
+          alt="Kaushik Karanam"
+          class="hero-avatar"
+          width="560" height="560"
+          decoding="async" fetchpriority="high"
+        />
+      </div>
+    </div> <!-- /container.hero-inner -->
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container grid-2">
+      <div class="section-head">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title">
+          From Code to Cloud:<wbr> Engineering Scalable Solutions.
+        </h2>
+      </div>
+
+      <div class="section-body">
+        <p class="muted lead">
+          I’m a Master’s graduate in Information Systems at Northeastern University with 2+ years of professional
+          experience as a Software Engineer. My work spans building distributed backend systems, cloud-native
+          applications, and machine learning pipelines that scale from prototype to production. I bring hands-on
+          expertise in Java Spring Boot, Python, CI/CD, and cloud platforms (AWS, GCP, Azure), complemented by
+          a strong foundation in automation and full-stack development.
+        </p>
+
+        <div class="tiles">
+          <div class="tile reveal">
+            <span class="tile-kpi">2+ yrs</span>
+            <span class="tile-label">Industry Experience</span>
+          </div>
+          <div class="tile reveal">
+            <span class="tile-kpi">10+</span>
+            <span class="tile-label">Projects</span>
+          </div>
+          <div class="tile reveal">
+            <span class="tile-kpi">MS</span>
+            <span class="tile-label">Northeastern University</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section alt">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Experience</p>
+        <h2 class="section-title">Professional Journey</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="card reveal">
+          <header class="card-head">
+            <h3>Graduate Student & Research Assistant</h3>
+            <span class="muted">Sep 2023 – May 2025 · Northeastern University</span>
+          </header>
+          <ul class="card-points">
+            <li>Developed deep learning models with TensorFlow & PyTorch for time-series and image data, boosting forecasting accuracy by <strong>15%</strong> over baselines.</li>
+            <li>Architected scalable data pipelines across Azure, GCP, and AWS, accelerating experimentation and ensuring reproducible ML workflows.</li>
+          </ul>
+          <div class="badges">
+            <span>Python</span><span>ML</span><span>Java</span><span>AWS</span>
+            <span>GCP</span><span>Azure</span><span>SpringBoot</span><span>CI/CD</span><span>SQL</span>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <header class="card-head">
+            <h3>Software Engineer</h3>
+            <span class="muted">Oct 2021 – Jun 2023 · Earthlink</span>
+          </header>
+          <ul class="card-points">
+            <li>Engineered RESTful microservices with Java Spring Boot for platforms serving <strong>500K+ daily users</strong>, cutting release cycles by <strong>75%</strong> via CI/CD automation.</li>
+            <li>Built automated testing frameworks (JUnit, Selenium, Postman) to reach <strong>85%+ coverage</strong> and reduce regression time by <strong>60%</strong>.</li>
+          </ul>
+          <div class="badges">
+            <span>Java</span><span>Spring Boot</span>
+            <span>JUnit</span><span>Selenium</span><span>Postman</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">SKILLS</p>
+        <h2 class="visually-hidden">Skills</h2>
+        <p class="section-sub">Full-Stack • Cloud • ML</p>
+      </div>
+
+      <div class="skills-catalog">
+        <!-- Programming Languages -->
+        <article class="skill-group">
+          <header class="skill-group-head"><h3>Programming Languages</h3></header>
+          <ul class="skill-items">
+            <li class="skill-item"><i class="fab fa-java"></i>Java</li>
+            <li class="skill-item"><i class="fab fa-python"></i>Python</li>
+            <li class="skill-item"><i class="fab fa-js"></i>JavaScript</li>
+            <li class="skill-item"><i class="fas fa-database"></i>SQL</li>
+            <li class="skill-item"><i class="fas fa-code"></i>TypeScript</li>
+            <li class="skill-item"><i class="fas fa-terminal"></i>Bash</li>
+          </ul>
+        </article>
+
+        <!-- Web Technologies -->
+        <article class="skill-group">
+          <header class="skill-group-head"><h3>Web Technologies</h3></header>
+          <ul class="skill-items">
+            <li class="skill-item"><i class="fas fa-leaf"></i>Spring Boot</li>
+            <li class="skill-item"><i class="fab fa-node-js"></i>Node.js</li>
+            <li class="skill-item"><i class="fas fa-server"></i>Express</li>
+            <li class="skill-item"><i class="fas fa-bolt"></i>FastAPI</li>
+            <li class="skill-item"><i class="fab fa-react"></i>React</li>
+            <li class="skill-item"><i class="fas fa-code"></i>Next.js</li>
+            <li class="skill-item"><i class="fab fa-html5"></i>HTML</li>
+            <li class="skill-item"><i class="fab fa-css3-alt"></i>CSS</li>
+          </ul>
+        </article>
+
+        <!-- Database & Data Engineering -->
+        <article class="skill-group">
+          <header class="skill-group-head"><h3>Database & Data Engineering</h3></header>
+          <ul class="skill-items">
+            <li class="skill-item"><i class="fas fa-database"></i>PostgreSQL</li>
+            <li class="skill-item"><i class="fas fa-database"></i>MySQL</li>
+            <li class="skill-item"><i class="fas fa-database"></i>MongoDB</li>
+            <li class="skill-item"><i class="fas fa-database"></i>Redis</li>
+            <li class="skill-item"><i class="fas fa-diagram-project"></i>Airflow</li>
+            <li class="skill-item"><i class="fas fa-cubes"></i>Kafka</li>
+            <li class="skill-item"><i class="fas fa-search"></i>Elasticsearch</li>
+            <li class="skill-item"><i class="fas fa-snowflake"></i>Snowflake</li>
+          </ul>
+        </article>
+
+        <!-- Distributed Systems & Cloud -->
+        <article class="skill-group">
+          <header class="skill-group-head"><h3>Distributed Systems & Cloud</h3></header>
+          <ul class="skill-items">
+            <li class="skill-item"><i class="fab fa-aws"></i>AWS</li>
+            <li class="skill-item"><i class="fab fa-google"></i>GCP</li>
+            <li class="skill-item"><i class="fab fa-microsoft"></i>Azure</li>
+            <li class="skill-item"><i class="fab fa-docker"></i>Docker</li>
+            <li class="skill-item"><i class="fas fa-network-wired"></i>Kubernetes</li>
+            <li class="skill-item"><i class="fas fa-code-branch"></i>CI/CD</li>
+            <li class="skill-item"><i class="fas fa-eye"></i>Jenkins</li>
+            <li class="skill-item"><i class="fas fa-tools"></i>Terraform</li>
+          </ul>
+        </article>
+
+        <!-- Machine Learning -->
+        <article class="skill-group">
+          <header class="skill-group-head"><h3>Machine Learning</h3></header>
+          <ul class="skill-items">
+            <li class="skill-item"><i class="fas fa-robot"></i>Neural Networks</li>
+            <li class="skill-item"><i class="fas fa-robot"></i>TensorFlow</li>
+            <li class="skill-item"><i class="fas fa-brain"></i>PyTorch</li>
+            <li class="skill-item"><i class="fas fa-chart-line"></i>scikit-learn</li>
+            <li class="skill-item"><i class="fas fa-calculator"></i>NumPy</li>
+            <li class="skill-item"><i class="fas fa-table"></i>Pandas</li>
+          </ul>
+        </article>
+
+        <!-- Generative AI -->
+        <article class="skill-group">
+          <header class="skill-group-head"><h3>Generative AI</h3></header>
+          <ul class="skill-items">
+            <li class="skill-item"><i class="fas fa-diagram-next"></i>Natural Language Processing</li>
+            <li class="skill-item"><i class="fas fa-plug"></i>OpenAI API</li>
+            <li class="skill-item"><i class="fas fa-book-open"></i>RAG</li>
+            <li class="skill-item"><i class="fas fa-database"></i>Vector DBs</li>
+            <li class="skill-item"><i class="fas fa-magic"></i>Prompt Engineering</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Projects</p>
+        <h2 class="section-title">Featured Work</h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- 1) Cloud Project -->
+        <article class="project">
+          <div class="project-media">
+            <a class="project-link-cover"
+               href="https://github.com/Kaushik-CloudProject/Project-Overview"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Open Cloud Project on GitHub" title="Open on GitHub">
+              <picture>
+                <img src="Images/Cloud.png" alt="Cloud project architecture preview"
+                     class="img-cover" loading="lazy" decoding="async" />
+              </picture>
+              <div class="media-overlay" aria-hidden="true">
+                <span class="overlay-badge"><i class="fab fa-github"></i> View on GitHub</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3>Cloud Project</h3>
+            <p>Architected a secure, auto-scaling cloud application with CI/CD pipelines and multi-layered encryption on GCP.</p>
+            <div class="badges"><span>GCP</span><span>Terraform</span><span>CI/CD</span><span>Docker</span><span>Cloud Security</span><span>Networking</span></div>
+          </div>
+        </article>
+
+        <!-- 2) Precipitation Forecasting -->
+        <article class="project">
+          <div class="project-media">
+            <a class="project-link-cover"
+               href="https://github.com/Kaushik-Karanam/Precipitation-forecasting-deep-learning"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Open Precipitation Forecasting project on GitHub" title="Open on GitHub">
+              <picture>
+                <img src="Images/DL.png" alt="Deep learning precipitation forecasting preview"
+                     class="img-cover" loading="lazy" decoding="async" />
+              </picture>
+              <div class="media-overlay" aria-hidden="true">
+                <span class="overlay-badge"><i class="fab fa-github"></i> View on GitHub</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3>Precipitation Forecasting</h3>
+            <p>Developed deep-learning models using satellite and weather data to accurately predict rainfall patterns.</p>
+            <div class="badges"><span>Python</span><span>TensorFlow</span><span>Deep Learning</span><span>Neural Networks</span><span>Time-series</span></div>
+          </div>
+        </article>
+
+        <!-- 3) BI Analytics -->
+        <article class="project">
+          <div class="project-media">
+            <a class="project-link-cover"
+               href="https://github.com/Kaushik-Karanam/MotorVehicle-BI-Analytics"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Open BI Analytics project on GitHub" title="Open on GitHub">
+              <picture>
+                <img src="Images/BI.png" alt="BI analytics dashboard preview"
+                     class="img-cover" loading="lazy" decoding="async" />
+              </picture>
+              <div class="media-overlay" aria-hidden="true">
+                <span class="overlay-badge"><i class="fab fa-github"></i> View on GitHub</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3>BI Analytics</h3>
+            <p>Built an ETL pipeline and interactive dashboards to analyze multi-city motor vehicle accident datasets.</p>
+            <div class="badges"><span>Python</span><span>ETL</span><span>SQL</span><span>Talend</span><span>Alteryx</span><span>Power BI / Tableau</span></div>
+          </div>
+        </article>
+
+        <!-- 4) Order Management System -->
+        <article class="project">
+          <div class="project-media">
+            <a class="project-link-cover"
+               href="https://github.com/Kaushik-Karanam/AED-OrderManagementSystem"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Open Order Management System project on GitHub" title="Open on GitHub">
+              <picture>
+                <img src="Images/AED.png" alt="Order management microservices flow preview"
+                     class="img-cover" loading="lazy" decoding="async" />
+              </picture>
+              <div class="media-overlay" aria-hidden="true">
+                <span class="overlay-badge"><i class="fab fa-github"></i> View on GitHub</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3>Order Management System</h3>
+            <p>Implemented a Spring Boot microservices system for role-based inventory, catalog, and order management.</p>
+            <div class="badges"><span>Java</span><span>Spring Boot</span><span>Microservices</span><span>MySQL</span><span>RBAC</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-more center">
+        <p class="muted">Want more? See everything on GitHub.</p>
+        <a class="btn btn--ghost" href="https://github.com/kaushik-karanam" target="_blank" rel="noopener">View all on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container grid-2">
+      <div class="section-head">
+        <p class="eyebrow">05 — Contact</p>
+        <h2 class="section-title">Let’s build something great.</h2>
+        <p class="muted">Open to full-time roles. Feel free to reach out!</p>
+        <ul class="contact-cards">
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:karanam.ka@northeastern.edu">karanam.ka@northeastern.edu</a></li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:617-879-8178">617-879-8178</a></li>
+          <li><i class="fa-solid fa-location-dot"></i> Seattle, WA</li>
+        </ul>
+      </div>
+
+      <!-- Formspree form -->
+      <form
+        id="contactForm"
+        class="form"
+        action="https://formspree.io/f/xyzdvjqe"
+        method="POST"
+        novalidate
+        autocomplete="off"
+      >
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+        <input type="hidden" name="_ts" id="formTs" value="">
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" maxlength="80" required
+                   inputmode="text" autocapitalize="words" aria-required="true">
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="_replyto" type="email" maxlength="120" required
+                   inputmode="email" autocomplete="email" aria-required="true">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" maxlength="120" required
+                 inputmode="text" aria-required="true">
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" maxlength="4000" required
+                    aria-required="true"></textarea>
+        </div>
+
+        <input type="hidden" name="_subject" value="Portfolio contact">
+
+        <button type="submit" class="btn btn-submit">
+          <span>Send</span> <i class="fas fa-paper-plane"></i>
+        </button>
+
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+    </div> <!-- /container.grid-2 -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="muted">© 2025 Kaushik Karanam</span>
+      <span class="quote">“Building the future, one line of code at a time.”</span>
+      <a class="back-to-top" href="#home" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up-long"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
