@@ -206,6 +206,115 @@ function initContactForm() {
       if (tsField) tsField.value = String(Date.now());
     }
   });
+
+  /* ================================
+   Contact form — AJAX submission
+   - No page redirect
+   - Clears fields on success
+   - Shows status text
+   - Clears on back/forward cache return
+   - Works with your existing Formspree endpoint
+================================== */
+(() => {
+  const form = document.getElementById('contactForm');
+  if (!form) return; // guard if form doesn't exist on a page
+
+  const endpoint = form.getAttribute('action');                // Formspree URL
+  const statusEl = form.querySelector('.form-status');         // <p class="form-status">
+  const submitBtn = form.querySelector('.btn-submit');         // the submit <button>
+  const tsField = form.querySelector('#formTs');               // hidden time-trap
+  const honeypot = form.querySelector('[name="_gotcha"]');     // hidden honeypot (spam trap)
+
+  // Helper: set status message
+  function setStatus(msg, type = '') {
+    if (!statusEl) return;
+    statusEl.className = `form-status${type ? ' ' + type : ''}`;
+    statusEl.textContent = msg;
+  }
+
+  // Helper: disable/enable UI while sending
+  function setSendingState(isSending) {
+    if (isSending) {
+      form.classList.add('is-sending');
+      submitBtn && (submitBtn.disabled = true);
+      setStatus('Sending…');
+    } else {
+      form.classList.remove('is-sending');
+      submitBtn && (submitBtn.disabled = false);
+    }
+  }
+
+  // Intercept submit → send with fetch (AJAX)
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Native HTML5 validation (uses your `required` attributes)
+    if (!form.checkValidity()) {
+      form.reportValidity?.();
+      return;
+    }
+
+    // Spam traps
+    if (honeypot && honeypot.value) {
+      // Bot filled the hidden field → silently drop
+      return;
+    }
+    if (tsField && !tsField.value) {
+      // time-trap: stamp when the user actually submits
+      tsField.value = String(Date.now());
+    }
+
+    setSendingState(true);
+
+    try {
+      const data = new FormData(form);
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' }, // ask Formspree for JSON
+        body: data
+      });
+
+      if (res.ok) {
+        // Reset fields
+        form.reset();
+
+        // Show success
+        setStatus("Thanks! I’ll get back to you soon.", 'ok');
+
+        // Keep URL clean and prevent stale inputs when navigating back
+        if ('history' in window) {
+          const url = location.pathname + location.search + '#contact';
+          history.replaceState({}, document.title, url);
+        }
+
+        // Optionally move focus to the status message for accessibility
+        statusEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        // Try to show Formspree’s error details
+        let msg = 'Something went wrong. Please try again or email me directly.';
+        try {
+          const j = await res.json();
+          if (j?.errors?.length) msg = j.errors.map(e => e.message).join(', ');
+        } catch (_) {}
+        setStatus(msg, 'error');
+      }
+    } catch (err) {
+      setStatus('Network error. Please try again later.', 'error');
+    } finally {
+      setSendingState(false);
+    }
+  });
+
+  // When the user returns via back/forward cache, clear any old input/status
+  window.addEventListener('pageshow', (evt) => {
+    if (evt.persisted) {
+      form.reset();
+      setStatus('');
+    }
+  });
+})();
+
 }
 
 // If you don't already call it elsewhere:
