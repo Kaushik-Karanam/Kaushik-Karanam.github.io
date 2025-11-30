@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,10 +9,13 @@
   <link rel="preload" as="image" href="Images/Main.jpg" fetchpriority="high">
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <!-- Sticky Header -->
   <header class="site-header">
@@ -63,8 +67,10 @@
         </div>
 
         <div class="hero-socials">
-          <a href="https://linkedin.com/in/kaushikkaranam" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/kaushik-karanam" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/kaushikkaranam" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/kaushik-karanam" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
           <a href="mailto:karanam.ka@northeastern.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
@@ -75,13 +81,8 @@
         <span class="ring ring--md" aria-hidden="true"></span>
         <span class="ring ring--sm" aria-hidden="true"></span>
 
-        <img
-          src="Images/Main.jpg"
-          alt="Kaushik Karanam"
-          class="hero-avatar"
-          width="560" height="560"
-          decoding="async" fetchpriority="high"
-        />
+        <img src="Images/Main.jpg" alt="Kaushik Karanam" class="hero-avatar" width="560" height="560" decoding="async"
+          fetchpriority="high" />
       </div>
     </div> <!-- /container.hero-inner -->
   </section>
@@ -132,14 +133,55 @@
       </div>
 
       <div class="timeline">
+
+        <!-- Microsoft -->
+        <article class="card reveal">
+          <header class="card-head">
+            <h3>Software Engineer</h3>
+            <span class="muted">Oct 2025 – Present · Microsoft</span>
+          </header>
+          <ul class="card-points">
+            <li>Engineered multi-region backend deployments for Microsoft Fabric’s OneLake, enhancing rollout
+              consistency and reducing service regressions across Azure environments.</li>
+            <li>Enhanced CI/CD workflows by debugging service interactions and optimizing build/test pipelines, enabling
+              smoother developer operations and more reliable release cycles.</li>
+          </ul>
+          <div class="badges">
+            <span>Python</span><span>Azure</span><span>OneLake</span>
+            <span>Distributed Systems</span><span>CI/CD</span>
+            <span>Azure DevOps</span><span>GitHub Actions</span>
+          </div>
+        </article>
+
+        <!-- Community Dreams Foundation -->
+        <article class="card reveal">
+          <header class="card-head">
+            <h3>Software Development Engineer</h3>
+            <span class="muted">Jul 2025 – Oct 2025 · Community Dreams Foundation</span>
+          </header>
+          <ul class="card-points">
+            <li>Developed and optimized backend services using Node.js, Express, and MongoDB with clean API routes and
+              efficient query patterns to support reliable program and volunteer management workflows.</li>
+            <li>Built responsive React dashboards and admin views with well-structured components and state management,
+              improving how staff monitored outreach activities and reviewed real-time data.</li>
+          </ul>
+          <div class="badges">
+            <span>Node.js</span><span>Express</span><span>MongoDB</span>
+            <span>React</span><span>APIs</span>
+          </div>
+        </article>
+
+        <!-- Graduate Student & RA -->
         <article class="card reveal">
           <header class="card-head">
             <h3>Graduate Student & Research Assistant</h3>
             <span class="muted">Sep 2023 – May 2025 · Northeastern University</span>
           </header>
           <ul class="card-points">
-            <li>Developed deep learning models with TensorFlow & PyTorch for time-series and image data, boosting forecasting accuracy by <strong>15%</strong> over baselines.</li>
-            <li>Architected scalable data pipelines across Azure, GCP, and AWS, accelerating experimentation and ensuring reproducible ML workflows.</li>
+            <li>Developed deep learning models with TensorFlow & PyTorch for time-series and image data, boosting
+              forecasting accuracy by <strong>15%</strong> over baselines.</li>
+            <li>Architected scalable data pipelines across Azure, GCP, and AWS, accelerating experimentation and
+              ensuring reproducible ML workflows.</li>
           </ul>
           <div class="badges">
             <span>Python</span><span>ML</span><span>Java</span><span>AWS</span>
@@ -147,23 +189,28 @@
           </div>
         </article>
 
+        <!-- Earthlink -->
         <article class="card reveal">
           <header class="card-head">
             <h3>Software Engineer</h3>
             <span class="muted">Oct 2021 – Jun 2023 · Earthlink</span>
           </header>
           <ul class="card-points">
-            <li>Engineered RESTful microservices with Java Spring Boot for platforms serving <strong>500K+ daily users</strong>, cutting release cycles by <strong>75%</strong> via CI/CD automation.</li>
-            <li>Built automated testing frameworks (JUnit, Selenium, Postman) to reach <strong>85%+ coverage</strong> and reduce regression time by <strong>60%</strong>.</li>
+            <li>Engineered RESTful microservices with Java Spring Boot for platforms serving <strong>500K+ daily
+                users</strong>, cutting release cycles by <strong>75%</strong> via CI/CD automation.</li>
+            <li>Built automated testing frameworks (JUnit, Selenium, Postman) to reach <strong>85%+ coverage</strong>
+              and reduce regression time by <strong>60%</strong>.</li>
           </ul>
           <div class="badges">
             <span>Java</span><span>Spring Boot</span>
             <span>JUnit</span><span>Selenium</span><span>Postman</span>
           </div>
         </article>
+
       </div>
     </div>
   </section>
+
 
   <!-- Skills -->
   <section id="skills" class="section">
@@ -177,7 +224,9 @@
       <div class="skills-catalog">
         <!-- Programming Languages -->
         <article class="skill-group">
-          <header class="skill-group-head"><h3>Programming Languages</h3></header>
+          <header class="skill-group-head">
+            <h3>Programming Languages</h3>
+          </header>
           <ul class="skill-items">
             <li class="skill-item"><i class="fab fa-java"></i>Java</li>
             <li class="skill-item"><i class="fab fa-python"></i>Python</li>
@@ -190,7 +239,9 @@
 
         <!-- Web Technologies -->
         <article class="skill-group">
-          <header class="skill-group-head"><h3>Web Technologies</h3></header>
+          <header class="skill-group-head">
+            <h3>Web Technologies</h3>
+          </header>
           <ul class="skill-items">
             <li class="skill-item"><i class="fas fa-leaf"></i>Spring Boot</li>
             <li class="skill-item"><i class="fab fa-node-js"></i>Node.js</li>
@@ -205,7 +256,9 @@
 
         <!-- Database & Data Engineering -->
         <article class="skill-group">
-          <header class="skill-group-head"><h3>Database & Data Engineering</h3></header>
+          <header class="skill-group-head">
+            <h3>Database & Data Engineering</h3>
+          </header>
           <ul class="skill-items">
             <li class="skill-item"><i class="fas fa-database"></i>PostgreSQL</li>
             <li class="skill-item"><i class="fas fa-database"></i>MySQL</li>
@@ -220,7 +273,9 @@
 
         <!-- Distributed Systems & Cloud -->
         <article class="skill-group">
-          <header class="skill-group-head"><h3>Distributed Systems & Cloud</h3></header>
+          <header class="skill-group-head">
+            <h3>Distributed Systems & Cloud</h3>
+          </header>
           <ul class="skill-items">
             <li class="skill-item"><i class="fab fa-aws"></i>AWS</li>
             <li class="skill-item"><i class="fab fa-google"></i>GCP</li>
@@ -235,7 +290,9 @@
 
         <!-- Machine Learning -->
         <article class="skill-group">
-          <header class="skill-group-head"><h3>Machine Learning</h3></header>
+          <header class="skill-group-head">
+            <h3>Machine Learning</h3>
+          </header>
           <ul class="skill-items">
             <li class="skill-item"><i class="fas fa-robot"></i>Neural Networks</li>
             <li class="skill-item"><i class="fas fa-robot"></i>TensorFlow</li>
@@ -248,7 +305,9 @@
 
         <!-- Generative AI -->
         <article class="skill-group">
-          <header class="skill-group-head"><h3>Generative AI</h3></header>
+          <header class="skill-group-head">
+            <h3>Generative AI</h3>
+          </header>
           <ul class="skill-items">
             <li class="skill-item"><i class="fas fa-diagram-next"></i>Natural Language Processing</li>
             <li class="skill-item"><i class="fas fa-plug"></i>OpenAI API</li>
@@ -273,13 +332,12 @@
         <!-- 1) Cloud Project -->
         <article class="project">
           <div class="project-media">
-            <a class="project-link-cover"
-               href="https://github.com/Kaushik-CloudProject/Project-Overview"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Open Cloud Project on GitHub" title="Open on GitHub">
+            <a class="project-link-cover" href="https://github.com/Kaushik-CloudProject/Project-Overview"
+              target="_blank" rel="noopener noreferrer" aria-label="Open Cloud Project on GitHub"
+              title="Open on GitHub">
               <picture>
-                <img src="Images/Cloud.png" alt="Cloud project architecture preview"
-                     class="img-cover" loading="lazy" decoding="async" />
+                <img src="Images/Cloud.png" alt="Cloud project architecture preview" class="img-cover" loading="lazy"
+                  decoding="async" />
               </picture>
               <div class="media-overlay" aria-hidden="true">
                 <span class="overlay-badge"><i class="fab fa-github"></i> View on GitHub</span>
@@ -288,8 +346,10 @@
           </div>
           <div class="project-info">
             <h3>Cloud Project</h3>
-            <p>Architected a secure, auto-scaling cloud application with CI/CD pipelines and multi-layered encryption on GCP.</p>
-            <div class="badges"><span>GCP</span><span>Terraform</span><span>CI/CD</span><span>Docker</span><span>Cloud Security</span><span>Networking</span></div>
+            <p>Architected a secure, auto-scaling cloud application with CI/CD pipelines and multi-layered encryption on
+              GCP.</p>
+            <div class="badges"><span>GCP</span><span>Terraform</span><span>CI/CD</span><span>Docker</span><span>Cloud
+                Security</span><span>Networking</span></div>
           </div>
         </article>
 
@@ -297,12 +357,12 @@
         <article class="project">
           <div class="project-media">
             <a class="project-link-cover"
-               href="https://github.com/Kaushik-Karanam/Precipitation-forecasting-deep-learning"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Open Precipitation Forecasting project on GitHub" title="Open on GitHub">
+              href="https://github.com/Kaushik-Karanam/Precipitation-forecasting-deep-learning" target="_blank"
+              rel="noopener noreferrer" aria-label="Open Precipitation Forecasting project on GitHub"
+              title="Open on GitHub">
               <picture>
-                <img src="Images/DL.png" alt="Deep learning precipitation forecasting preview"
-                     class="img-cover" loading="lazy" decoding="async" />
+                <img src="Images/DL.png" alt="Deep learning precipitation forecasting preview" class="img-cover"
+                  loading="lazy" decoding="async" />
               </picture>
               <div class="media-overlay" aria-hidden="true">
                 <span class="overlay-badge"><i class="fab fa-github"></i> View on GitHub</span>
@@ -311,21 +371,22 @@
           </div>
           <div class="project-info">
             <h3>Precipitation Forecasting</h3>
-            <p>Developed deep-learning models using satellite and weather data to accurately predict rainfall patterns.</p>
-            <div class="badges"><span>Python</span><span>TensorFlow</span><span>Deep Learning</span><span>Neural Networks</span><span>Time-series</span></div>
+            <p>Developed deep-learning models using satellite and weather data to accurately predict rainfall patterns.
+            </p>
+            <div class="badges"><span>Python</span><span>TensorFlow</span><span>Deep Learning</span><span>Neural
+                Networks</span><span>Time-series</span></div>
           </div>
         </article>
 
         <!-- 3) BI Analytics -->
         <article class="project">
           <div class="project-media">
-            <a class="project-link-cover"
-               href="https://github.com/Kaushik-Karanam/MotorVehicle-BI-Analytics"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Open BI Analytics project on GitHub" title="Open on GitHub">
+            <a class="project-link-cover" href="https://github.com/Kaushik-Karanam/MotorVehicle-BI-Analytics"
+              target="_blank" rel="noopener noreferrer" aria-label="Open BI Analytics project on GitHub"
+              title="Open on GitHub">
               <picture>
-                <img src="Images/BI.png" alt="BI analytics dashboard preview"
-                     class="img-cover" loading="lazy" decoding="async" />
+                <img src="Images/BI.png" alt="BI analytics dashboard preview" class="img-cover" loading="lazy"
+                  decoding="async" />
               </picture>
               <div class="media-overlay" aria-hidden="true">
                 <span class="overlay-badge"><i class="fab fa-github"></i> View on GitHub</span>
@@ -334,21 +395,24 @@
           </div>
           <div class="project-info">
             <h3>BI Analytics</h3>
-            <p>Built an ETL pipeline and interactive dashboards to analyze multi-city motor vehicle accident datasets.</p>
-            <div class="badges"><span>Python</span><span>ETL</span><span>SQL</span><span>Talend</span><span>Alteryx</span><span>Power BI / Tableau</span></div>
+            <p>Built an ETL pipeline and interactive dashboards to analyze multi-city motor vehicle accident datasets.
+            </p>
+            <div class="badges">
+              <span>Python</span><span>ETL</span><span>SQL</span><span>Talend</span><span>Alteryx</span><span>Power BI /
+                Tableau</span>
+            </div>
           </div>
         </article>
 
         <!-- 4) Order Management System -->
         <article class="project">
           <div class="project-media">
-            <a class="project-link-cover"
-               href="https://github.com/Kaushik-Karanam/AED-OrderManagementSystem"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Open Order Management System project on GitHub" title="Open on GitHub">
+            <a class="project-link-cover" href="https://github.com/Kaushik-Karanam/AED-OrderManagementSystem"
+              target="_blank" rel="noopener noreferrer" aria-label="Open Order Management System project on GitHub"
+              title="Open on GitHub">
               <picture>
-                <img src="Images/AED.png" alt="Order management microservices flow preview"
-                     class="img-cover" loading="lazy" decoding="async" />
+                <img src="Images/AED.png" alt="Order management microservices flow preview" class="img-cover"
+                  loading="lazy" decoding="async" />
               </picture>
               <div class="media-overlay" aria-hidden="true">
                 <span class="overlay-badge"><i class="fab fa-github"></i> View on GitHub</span>
@@ -357,8 +421,10 @@
           </div>
           <div class="project-info">
             <h3>Order Management System</h3>
-            <p>Implemented a Spring Boot microservices system for role-based inventory, catalog, and order management.</p>
-            <div class="badges"><span>Java</span><span>Spring Boot</span><span>Microservices</span><span>MySQL</span><span>RBAC</span></div>
+            <p>Implemented a Spring Boot microservices system for role-based inventory, catalog, and order management.
+            </p>
+            <div class="badges"><span>Java</span><span>Spring
+                Boot</span><span>Microservices</span><span>MySQL</span><span>RBAC</span></div>
           </div>
         </article>
       </div>
@@ -378,47 +444,40 @@
         <h2 class="section-title">Let’s build something great.</h2>
         <p class="muted">Open to full-time roles. Feel free to reach out!</p>
         <ul class="contact-cards">
-          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:karanam.ka@northeastern.edu">karanam.ka@northeastern.edu</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a
+              href="mailto:karanam.ka@northeastern.edu">karanam.ka@northeastern.edu</a></li>
           <li><i class="fa-solid fa-phone"></i> <a href="tel:617-879-8178">617-879-8178</a></li>
           <li><i class="fa-solid fa-location-dot"></i> Seattle, WA</li>
         </ul>
       </div>
 
       <!-- Formspree form -->
-      <form
-        id="contactForm"
-        class="form"
-        action="https://formspree.io/f/xyzdvjqe"
-        method="POST"
-        novalidate
-        autocomplete="off"
-      >
+      <form id="contactForm" class="form" action="https://formspree.io/f/xyzdvjqe" method="POST" novalidate
+        autocomplete="off">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
         <input type="hidden" name="_ts" id="formTs" value="">
 
         <div class="form-row">
           <div class="form-field">
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" maxlength="80" required
-                   inputmode="text" autocapitalize="words" aria-required="true">
+            <input id="name" name="name" type="text" maxlength="80" required inputmode="text" autocapitalize="words"
+              aria-required="true">
           </div>
           <div class="form-field">
             <label for="email">Email</label>
-            <input id="email" name="_replyto" type="email" maxlength="120" required
-                   inputmode="email" autocomplete="email" aria-required="true">
+            <input id="email" name="_replyto" type="email" maxlength="120" required inputmode="email"
+              autocomplete="email" aria-required="true">
           </div>
         </div>
 
         <div class="form-field">
           <label for="subject">Subject</label>
-          <input id="subject" name="subject" type="text" maxlength="120" required
-                 inputmode="text" aria-required="true">
+          <input id="subject" name="subject" type="text" maxlength="120" required inputmode="text" aria-required="true">
         </div>
 
         <div class="form-field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" maxlength="4000" required
-                    aria-required="true"></textarea>
+          <textarea id="message" name="message" rows="6" maxlength="4000" required aria-required="true"></textarea>
         </div>
 
         <input type="hidden" name="_subject" value="Portfolio contact">
@@ -445,4 +504,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
